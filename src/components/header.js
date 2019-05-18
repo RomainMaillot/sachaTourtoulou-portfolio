@@ -1,22 +1,11 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { texts, containers } from '../styles';
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
+  <containers.header>
+      <texts.title>
         <Link
           to="/"
           style={{
@@ -26,9 +15,28 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
-    </div>
-  </header>
+      </texts.title>
+      <containers.nav>
+        <Link
+          to="/page-2"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          About
+        </Link>
+        <Link
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          Work
+        </Link>
+      </containers.nav>
+  </containers.header>
 )
 
 Header.propTypes = {

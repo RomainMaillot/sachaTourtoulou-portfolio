@@ -36,9 +36,9 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with
+            © {new Date().getFullYear()}, Sacha Tourtoulou. All rights reserved. sachatourtoulou.fr
             {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            Built by <a href="https://www.romain-maillot.netlify.com">Romain Maillot</a>
           </footer>
         </div>
       </>
