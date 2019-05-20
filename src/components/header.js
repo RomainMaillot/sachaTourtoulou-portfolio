@@ -5,7 +5,7 @@ import { texts, containers } from '../styles';
 
 const Header = ({ siteTitle }) => (
   <containers.header>
-      <texts.title>
+      <texts.title header>
         <Link
           to="/"
           style={{
@@ -34,6 +34,15 @@ const Header = ({ siteTitle }) => (
           }}
         >
           Work
+        </Link>
+        <Link
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          Contact
         </Link>
       </containers.nav>
   </containers.header>

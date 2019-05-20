@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import { colors } from './constants'
+import { colors, sizes } from './constants'
 
 const header = styled.header`
-    background-color: ${colors.blue};
-    height: 10%;
+    height: 8vh;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -12,12 +11,16 @@ const header = styled.header`
     justify-content: space-between;
     padding: 0 5vw;
     box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
 `
 const nav = styled.nav`
     display: flex;
     flex-direction: row;
-    width: 20%;
     justify-content: space-between;
+    width: 30%;
+    a {
+        font-size: ${sizes.header};
+    }
 `
 
 export {
