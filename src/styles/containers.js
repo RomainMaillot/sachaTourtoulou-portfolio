@@ -23,7 +23,25 @@ const nav = styled.nav`
     }
 `
 
+const main = styled.footer`
+    width: 100vw;
+    min-height: 66vh;
+`
+
+const footer = styled.footer`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vh 0;
+    background: ${colors.darkBlue};
+    color: white;
+    width: 100vw;
+`
+
 export {
     header,
-    nav
+    nav,
+    footer,
+    main
 }

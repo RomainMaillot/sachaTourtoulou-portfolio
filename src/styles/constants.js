@@ -1,6 +1,6 @@
 const colors = {
-    blue: '#3498DB',
-    darkBlue: '#2980B9',
+    blue: '#0F3A84',
+    darkBlue: '#190E4D',
     green: '#2ECC71',
     lightGreen: '#2ECC71',
     darkGreen: '#27AE60',
@@ -12,8 +12,9 @@ const colors = {
 const sizes = {
     button: '1rem',
     header: '1.44em',
+    footer: '1.2em',
     title: '2rem',
-    text: '1.5rem',
+    text: '1em',
     question: '1.25rem'
 }
 

@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import { texts, containers } from '../styles';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -34,13 +35,19 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Sacha Tourtoulou. All rights reserved. sachatourtoulou.fr
-            {` `}
-            Built by <a href="https://www.romain-maillot.netlify.com">Romain Maillot</a>
-          </footer>
+          <containers.main>{children}</containers.main>
         </div>
+        <containers.footer>
+          <texts.footer bold>
+            © {new Date().getFullYear()}, Sacha Tourtoulou. All rights reserved.
+          </texts.footer>
+          <texts.footer>
+            sachatourtoulou.fr
+          </texts.footer>
+          <texts.credits>
+            Built by <a href="https://www.romain-maillot.netlify.com">Romain Maillot</a>
+          </texts.credits>
+        </containers.footer>
       </>
     )}
   />

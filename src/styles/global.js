@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { colors } from './constants'
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
@@ -9,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Open Sans', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background: #0F3A84;
+        background: ${colors.blue};
     }
     html {
         font-size: 14px;
