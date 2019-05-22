@@ -8,10 +8,21 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Header from "./header"
 import "./layout.css"
-import { texts, containers } from '../styles';
+import { texts, containers } from '../styles'
+
+export const logos = graphql`
+  fragment logos on File {
+    childImageSharp {
+      fixed(width: 20, height: 20) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -21,6 +32,15 @@ const Layout = ({ children }) => (
           siteMetadata {
             title
           }
+        }
+        dribbble: file(relativePath: { eq: "logos/dribbble.png" }) {
+          ...logos
+        }
+        linkedin: file(relativePath: { eq: "logos/linkedin.png" }) {
+          ...logos
+        }
+        more: file(relativePath: { eq: "logos/more.png" }) {
+          ...logos
         }
       }
     `}
@@ -38,6 +58,11 @@ const Layout = ({ children }) => (
           <containers.main>{children}</containers.main>
         </div>
         <containers.footer>
+          <containers.logo>
+            <Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" />
+            <Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" />
+            <Img fixed={data.more.childImageSharp.fixed} alt="" />
+          </containers.logo>
           <texts.footer bold>
             © {new Date().getFullYear()}, Sacha Tourtoulou. All rights reserved.
           </texts.footer>

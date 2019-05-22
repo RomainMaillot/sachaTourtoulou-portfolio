@@ -39,9 +39,18 @@ const footer = styled.footer`
     width: 100vw;
 `
 
+const logo = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 10%;
+    margin-bottom: 10px;
+`
+
 export {
     header,
     nav,
     footer,
-    main
+    main,
+    logo
 }
