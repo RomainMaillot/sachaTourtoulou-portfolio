@@ -13,7 +13,8 @@ const sizes = {
     button: '1rem',
     header: '1.44em',
     footer: '1.2em',
-    title: '2rem',
+    title: '2.5rem',
+    textBig: '2rem',
     text: '1em',
     question: '1.25rem'
 }

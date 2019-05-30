@@ -23,9 +23,12 @@ const nav = styled.nav`
     }
 `
 
-const main = styled.footer`
-    width: 100vw;
+const main = styled.main`
+    width: 100%;
     min-height: 66vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 const footer = styled.footer`

@@ -12,6 +12,15 @@ const text = styled.p`
     margin: 0;
 `
 
+const textBig = styled.p`
+    font-size: ${sizes.textBig};
+    color: white;
+    font-weight: bold;
+    width: 70%;
+    margin: 0;
+    text-align: center;
+`
+
 const footer = styled.p`
     font-size: ${sizes.footer};
     font-weight: ${props => props.bold ? 'bold' : 'normal'};
@@ -34,6 +43,7 @@ const credits = styled.p`
 export {
     title,
     text,
+    textBig,
     footer,
     credits
 }
