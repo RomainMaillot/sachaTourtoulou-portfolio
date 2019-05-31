@@ -6,7 +6,8 @@ const colors = {
     darkGreen: '#27AE60',
     grey: '#ECF0F1',
     lightGrey: '#F7F7F7',
-    darkGrey: '#95A5A6'
+    darkGrey: '#95A5A6',
+    yellow: '#FFBE26'
 }
 
 const sizes = {

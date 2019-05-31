@@ -14,6 +14,8 @@ import Header from "./header"
 import "./layout.css"
 import { texts, containers } from '../styles'
 
+import BackgroundImage from 'gatsby-background-image'
+
 export const logos = graphql`
   fragment logos on File {
     childImageSharp {
@@ -23,6 +25,15 @@ export const logos = graphql`
     }
   }
 `
+
+export const background = graphql
+`fragment background on File {
+    childImageSharp {
+      fluid(quality: 90, maxHeight: 1080) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -42,21 +53,32 @@ const Layout = ({ children }) => (
         more: file(relativePath: { eq: "logos/more.png" }) {
           ...logos
         }
+        desktop: file(relativePath: { eq: "homepage.png" }) {
+          ...background
+        }
       }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          <containers.main>{children}</containers.main>
-        </div>
+        <BackgroundImage Tag="section"
+                          fluid={data.desktop.childImageSharp.fluid}
+                          style={{ 
+                            backgroundPosition: 'top',
+                            backgroundSize: 'contain',
+                          }}
+          >
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div
+            style={{
+              margin: `0 auto`,
+              maxWidth: 960,
+              padding: `0px 1.0875rem 1.45rem`,
+              paddingTop: 0,
+            }}
+          >
+            <containers.main>{children}</containers.main>
+          </div>
+        </BackgroundImage>
         <containers.footer>
           <containers.logo>
             <Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" />

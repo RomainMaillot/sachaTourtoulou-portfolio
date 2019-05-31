@@ -25,10 +25,13 @@ const nav = styled.nav`
 
 const main = styled.main`
     width: 100%;
-    min-height: 66vh;
+    height: 100vh;
+    padding: 15vh 0 10vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 `
 
 const footer = styled.footer`

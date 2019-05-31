@@ -27,7 +27,7 @@ const Header = ({ siteTitle }) => (
           About
         </Link>
         <Link
-          to="/"
+          to="/work"
           style={{
             color: `white`,
             textDecoration: `none`,

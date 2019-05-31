@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { sizes, colors } from './constants'
+import { Link } from "gatsby"
 
 const title = styled.h1`
     font-size: ${props => props.header ? sizes.header : sizes.title};
@@ -40,10 +41,22 @@ const credits = styled.p`
     }
 `
 
+const button = styled(Link)`
+    color: black;
+    border-radius: 2px;
+    padding: 10px 30px;
+    vertical-align: center;
+    background: ${colors.yellow};
+    text-decoration: none;
+    font-weight: bold;
+    font-size: ${sizes.button}
+`
+
 export {
     title,
     text,
     textBig,
     footer,
-    credits
+    credits,
+    button
 }
