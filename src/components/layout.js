@@ -53,7 +53,10 @@ const Layout = ({ children }) => (
         more: file(relativePath: { eq: "logos/more.png" }) {
           ...logos
         }
-        desktop: file(relativePath: { eq: "homepage.png" }) {
+        homepage: file(relativePath: { eq: "backgrounds/homepage_bg.png" }) {
+          ...background
+        }
+        about: file(relativePath: { eq: "backgrounds/about_bg.png" }) {
           ...background
         }
       }
@@ -61,29 +64,20 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <BackgroundImage Tag="section"
-                          fluid={data.desktop.childImageSharp.fluid}
+                          fluid={ children[0].props.title === 'Home' ? data.homepage.childImageSharp.fluid : data.about.childImageSharp.fluid }
                           style={{ 
                             backgroundPosition: 'top',
                             backgroundSize: 'contain',
                           }}
           >
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `0px 1.0875rem 1.45rem`,
-              paddingTop: 0,
-            }}
-          >
-            <containers.main>{children}</containers.main>
-          </div>
+          <containers.main about={ children[0].props.title === 'About' ? true : false }>{children}</containers.main>
         </BackgroundImage>
         <containers.footer>
           <containers.logo>
-            <Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" />
-            <Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" />
-            <Img fixed={data.more.childImageSharp.fixed} alt="" />
+            <a href="https://dribbble.com/" target="_blank"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
+            <a href="https://linkedin.com/" target="_blank"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
+            <a href="#" target="_blank"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
           </containers.logo>
           <texts.footer bold>
             © {new Date().getFullYear()}, Sacha Tourtoulou. All rights reserved.

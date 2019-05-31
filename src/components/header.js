@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
       </texts.title>
       <containers.nav>
         <Link
-          to="/page-2"
+          to="/about"
           style={{
             color: `white`,
             textDecoration: `none`,

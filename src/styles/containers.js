@@ -24,13 +24,13 @@ const nav = styled.nav`
 `
 
 const main = styled.main`
-    width: 100%;
+    width: ${ props => props.about ? '40%' : '100%' };
     height: 100vh;
-    padding: 15vh 0 10vh 0;
+    padding: ${ props => props.about ? '0 15vh 0 15vh' : '15vh 0 10vh 0' };
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items: ${ props => props.about ? 'flex-start' : 'center' };
+    justify-content: ${ props => props.about ? 'space-around' : 'space-between' };
     box-sizing: border-box;
 `
 
@@ -53,10 +53,28 @@ const logo = styled.div`
     margin-bottom: 10px;
 `
 
+const logos = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+    padding-top: 15px;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 30%;
+        height: 1px;
+        background: white;
+    }
+`
+
 export {
     header,
     nav,
     footer,
     main,
-    logo
+    logo,
+    logos
 }

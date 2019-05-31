@@ -12,12 +12,13 @@ const colors = {
 
 const sizes = {
     button: '1rem',
-    header: '1.44em',
+    header: '1.44rem',
+    description: '1.44rem',
     footer: '1.2em',
     title: '2.5rem',
     textBig: '2rem',
     text: '1em',
-    question: '1.25rem'
+    button: '1.2rem'
 }
 
 export {

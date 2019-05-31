@@ -6,6 +6,7 @@ const title = styled.h1`
     font-size: ${props => props.header ? sizes.header : sizes.title};
     color: white;
     margin: 0;
+    font-weight: bold;
 `
 const text = styled.p`
     font-size: ${sizes.text};
@@ -17,7 +18,7 @@ const textBig = styled.p`
     font-size: ${sizes.textBig};
     color: white;
     font-weight: bold;
-    width: 70%;
+    width: 50%;
     margin: 0;
     text-align: center;
 `
@@ -41,6 +42,11 @@ const credits = styled.p`
     }
 `
 
+const description = styled.p`
+    font-size: ${sizes.description};
+    color: white;
+`
+
 const button = styled(Link)`
     color: black;
     border-radius: 2px;
@@ -58,5 +64,6 @@ export {
     textBig,
     footer,
     credits,
-    button
+    button,
+    description
 }
