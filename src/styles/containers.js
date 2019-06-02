@@ -26,7 +26,7 @@ const nav = styled.nav`
 const main = styled.main`
     width: ${ props => props.about ? '40%' : '100%' };
     height: 100vh;
-    padding: ${ props => props.about ? '0 15vh 0 15vh' : '15vh 0 10vh 0' };
+    padding: ${ props => props.about ? '0 5vw 10vh 5vw' : '15vh 0 10vh 0' };
     display: flex;
     flex-direction: column;
     align-items: ${ props => props.about ? 'flex-start' : 'center' };
