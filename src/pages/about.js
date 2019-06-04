@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import GlobalStyles from '../styles/global'
 import { texts, containers } from '../styles/index'
 
-const SecondPage = () => (
+const About = () => (
+  <>
   <StaticQuery
     query={graphql`
       query ImageQuery {
@@ -23,7 +23,8 @@ const SecondPage = () => (
         }
       }
     `}
-    render={data => (<Layout>
+    render={data => (
+      <>
         <SEO title="About" />
         <GlobalStyles />
         <texts.title>About me</texts.title>
@@ -35,11 +36,13 @@ const SecondPage = () => (
         <containers.logos>
           <a href="https://dribbble.com/" target="_blank"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
           <a href="https://linkedin.com/" target="_blank"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
-          <a href="#" target="_blank"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
+          <a href="https://linkedin.com/" target="_blank"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
         </containers.logos>
         <texts.button>My resume</texts.button>
-    </Layout>)}
+      </>
+        )}
   />
+  </>
 )
 
-export default SecondPage
+export default About

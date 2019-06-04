@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => (
           Work
         </Link>
         <Link
-          to="/"
+          to="/contact"
           style={{
             color: `white`,
             textDecoration: `none`,

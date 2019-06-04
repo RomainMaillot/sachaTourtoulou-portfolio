@@ -10,11 +10,13 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Header from "./header"
-import "./layout.css"
+import Header from "../components/header"
 import { texts, containers } from '../styles'
 
+
 import BackgroundImage from 'gatsby-background-image'
+
+import Transition from '../components/transition'
 
 export const logos = graphql`
   fragment logos on File {
@@ -35,7 +37,7 @@ export const background = graphql
     }
   }`
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -64,14 +66,13 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <BackgroundImage Tag="section"
-                          fluid={ children[0].props.title === 'Home' ? data.homepage.childImageSharp.fluid : data.about.childImageSharp.fluid }
+                          fluid={ children.key === '/' ? data.homepage.childImageSharp.fluid : data.about.childImageSharp.fluid }
                           style={{ 
                             backgroundPosition: 'top',
-                            backgroundSize: 'contain',
                           }}
           >
           <Header siteTitle={data.site.siteMetadata.title} />
-          <containers.main about={ children[0].props.title === 'About' ? true : false }>{children}</containers.main>
+          <Transition location={location}><containers.main about={ children.key === '/about/' ? 'about' : undefined }>{children}</containers.main></Transition>
         </BackgroundImage>
         <containers.footer>
           <containers.logo>
