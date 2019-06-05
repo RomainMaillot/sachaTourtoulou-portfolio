@@ -35,6 +35,27 @@ const main = styled.main`
     box-sizing: border-box;
 `
 
+const about = styled.main`
+    width: 40%;
+    height: 100vh;
+    padding: 15vh 5vw 10vh 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    box-sizing: border-box;
+`
+
+const work = styled.main`
+    width: 100%;
+    height: 100vh;
+    padding: 15vh 5vw 10vh 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+`
+
 const footer = styled.footer`
     display: flex;
     flex-direction: column;
@@ -77,5 +98,7 @@ export {
     footer,
     main,
     logo,
-    logos
+    logos,
+    about,
+    work
 }

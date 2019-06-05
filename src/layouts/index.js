@@ -14,8 +14,6 @@ import GlobalStyles from '../styles/global'
 import Header from "../components/header"
 import { texts, containers } from '../styles'
 
-import BackgroundImage from 'gatsby-background-image'
-
 import Transition from '../components/transition'
 
 export const logos = graphql`
@@ -55,12 +53,6 @@ const Layout = ({ children, location }) => (
         more: file(relativePath: { eq: "logos/more.png" }) {
           ...logos
         }
-        homepage: file(relativePath: { eq: "backgrounds/homepage_bg.png" }) {
-          ...background
-        }
-        about: file(relativePath: { eq: "backgrounds/about_bg.png" }) {
-          ...background
-        }
       }
     `}
     render={data => (
@@ -68,15 +60,7 @@ const Layout = ({ children, location }) => (
         <GlobalStyles />
         <Header siteTitle={data.site.siteMetadata.title} />
         <Transition location={location}>
-        <BackgroundImage Tag="section"
-                          fluid={ children.key === '/' ? data.homepage.childImageSharp.fluid : data.about.childImageSharp.fluid }
-                          style={{ 
-                            backgroundPosition: 'top',
-                          }}
-                          fadeIn='soft'
-          >
-          <containers.main about={ children.key === '/about/' ? 'about' : undefined }>{children}</containers.main>
-        </BackgroundImage>
+          {children}
         </Transition>
         <containers.footer>
           <containers.logo>
