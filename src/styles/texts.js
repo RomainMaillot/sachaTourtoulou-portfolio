@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled,{ keyframes } from 'styled-components'
 import { sizes, colors } from './constants'
 import { Link } from "gatsby"
 
@@ -58,6 +58,55 @@ const button = styled(Link)`
     font-size: ${sizes.button}
 `
 
+const projectTitle = styled.h2`
+    font-size: ${sizes.description};
+    color: white;
+`
+
+const theme = styled.p`
+    font-size: ${sizes.description};
+    font-weight: bold;
+    color: white;
+    opacity: 0.5;
+    margin: 0;
+`
+
+const number = styled.p`
+    font-size: ${sizes.tiny};
+    font-weight: light;
+    color: white;
+    opacity: 0.5;
+`
+
+const inviteScroll = keyframes`
+    0 {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(10px)
+    }
+    100% {
+        transform: translateY(0)
+    }
+`
+
+const more = styled(number)`
+    position: absolute;
+    bottom: 5vh;
+    align-self: center;
+    &::after {
+        content: "";
+        width: 1px;
+        height: 3vh;
+        position: absolute;
+        top: 2vh;
+        left: 50%;
+        background: white;
+        animation: ${inviteScroll} 2s ease-in-out infinite;
+        animation-fill-mode: both;
+    }
+`
+
 export {
     title,
     text,
@@ -65,5 +114,9 @@ export {
     footer,
     credits,
     button,
-    description
+    description,
+    projectTitle,
+    theme,
+    number,
+    more
 }

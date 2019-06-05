@@ -56,6 +56,32 @@ const work = styled.main`
     box-sizing: border-box;
 `
 
+const project = styled.div`
+    width: 90%;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-sizing: border-box;
+    .img {
+        width: 100%;
+    }
+`
+
+const row = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+const col = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 const footer = styled.footer`
     display: flex;
     flex-direction: column;
@@ -100,5 +126,8 @@ export {
     logo,
     logos,
     about,
-    work
+    work,
+    project,
+    row,
+    col
 }

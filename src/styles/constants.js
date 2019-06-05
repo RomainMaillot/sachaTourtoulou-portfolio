@@ -18,7 +18,8 @@ const sizes = {
     title: '2.5rem',
     textBig: '2rem',
     text: '1em',
-    button: '1.2rem'
+    button: '1.2rem',
+    tiny: '0.83rem'
 }
 
 export {

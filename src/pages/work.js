@@ -28,6 +28,7 @@ const Work = () => (
             <SEO title="Projects" description="This is my description for my project page." />
             <texts.title>My work</texts.title>
             <Project />
+            <texts.more>Show me more</texts.more>
           </containers.work>
         </BackgroundImage>
       )}

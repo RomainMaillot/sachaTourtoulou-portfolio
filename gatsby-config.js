@@ -19,8 +19,12 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Source Sans Pro`,
-            variants: [`400`, `700`]
+            family: `Rubik`,
+            variants: [`300`, `400`, `700`]
+          },
+          {
+            family: `Aleo`,
+            variants: [`400`]
           },
         ],
       },

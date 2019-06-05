@@ -10,18 +10,24 @@ const Project = () => (
         query ProjectImage{
             placeholderImage: file(relativePath: { eq: "projet1.jpg" }) {
                 childImageSharp {
-                    fixed(width: 100, height: 100) {
-                    ...GatsbyImageSharpFixed
+                    fluid(quality: 90, maxWidth: 1080) {
+                    ...GatsbyImageSharpFluid
                     }
                 }
             }
         }
         `}
         render={data => 
-            <>
-                <texts.title>Project 1</texts.title>
-                <Img fixed={data.placeholderImage.childImageSharp.fixed} />
-            </>
+            <containers.project>
+                <div className='img'><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>
+                <containers.row>
+                    <containers.col>
+                        <texts.projectTitle>Product website • 2019</texts.projectTitle>
+                        <texts.theme>UX / UI Design</texts.theme>
+                    </containers.col>
+                    <texts.number>01/02</texts.number>
+                </containers.row>
+            </containers.project>
         }
   />
 )
