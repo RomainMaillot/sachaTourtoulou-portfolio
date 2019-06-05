@@ -1,3 +1,4 @@
+const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: `Sacha Tourtoulou`,
@@ -11,6 +12,17 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Source Sans Pro`,
+            variants: [`400`, `700`]
+          },
+        ],
       },
     },
     'gatsby-plugin-layout',

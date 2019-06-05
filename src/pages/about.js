@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 
 import SEO from "../components/seo"
-import GlobalStyles from '../styles/global'
+
 import { texts, containers } from '../styles/index'
 
 const About = () => (
@@ -26,7 +26,6 @@ const About = () => (
     render={data => (
       <>
         <SEO title="About" />
-        <GlobalStyles />
         <texts.title>About me</texts.title>
         <div>
           <texts.description>Hi there! I’m Sacha Tourtoulou, a digital designer from Paris, France. I’m focused on UI/UX Design, Illustration & Motion Design and I also appreciate Photography, Branding and Print.</texts.description>
@@ -34,9 +33,9 @@ const About = () => (
           <texts.description>Feel free to contact me! </texts.description>
         </div>
         <containers.logos>
-          <a href="https://dribbble.com/" target="_blank"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
-          <a href="https://linkedin.com/" target="_blank"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
-          <a href="https://linkedin.com/" target="_blank"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
+          <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
         </containers.logos>
         <texts.button>My resume</texts.button>
       </>

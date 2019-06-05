@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 import { colors } from './constants'
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
-    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap:400,600');
     body {
         margin: 0;
         padding: 0;

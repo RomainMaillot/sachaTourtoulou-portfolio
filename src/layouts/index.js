@@ -10,9 +10,9 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import GlobalStyles from '../styles/global'
 import Header from "../components/header"
 import { texts, containers } from '../styles'
-
 
 import BackgroundImage from 'gatsby-background-image'
 
@@ -65,15 +65,19 @@ const Layout = ({ children, location }) => (
     `}
     render={data => (
       <>
+        <GlobalStyles />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Transition location={location}>
         <BackgroundImage Tag="section"
                           fluid={ children.key === '/' ? data.homepage.childImageSharp.fluid : data.about.childImageSharp.fluid }
                           style={{ 
                             backgroundPosition: 'top',
                           }}
+                          fadeIn='soft'
           >
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <Transition location={location}><containers.main about={ children.key === '/about/' ? 'about' : undefined }>{children}</containers.main></Transition>
+          <containers.main about={ children.key === '/about/' ? 'about' : undefined }>{children}</containers.main>
         </BackgroundImage>
+        </Transition>
         <containers.footer>
           <containers.logo>
             <a href="https://dribbble.com/" target="_blank"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 

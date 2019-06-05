@@ -6,7 +6,7 @@ const title = styled.h1`
     font-size: ${props => props.header ? sizes.header : sizes.title};
     color: white;
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 `
 const text = styled.p`
     font-size: ${sizes.text};
@@ -25,7 +25,7 @@ const textBig = styled.p`
 
 const footer = styled.p`
     font-size: ${sizes.footer};
-    font-weight: ${props => props.bold ? 'bold' : 'normal'};
+    font-weight: ${props => props.bold ? '700' : 'normal'};
     color: white;
     margin: 0;
     opacity: 0.75;
@@ -33,7 +33,7 @@ const footer = styled.p`
 
 const credits = styled.p`
     font-size: ${sizes.text};
-    font-weight: 'bold';
+    font-weight: '700';
     color: white;
     margin-top: 2vh;
     opacity: 0.5;
@@ -54,7 +54,7 @@ const button = styled(Link)`
     vertical-align: center;
     background: ${colors.yellow};
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     font-size: ${sizes.button}
 `
 

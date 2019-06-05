@@ -7,7 +7,8 @@ const header = styled.header`
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: relative;
+    position: absolute;
+    z-index: 10;
     justify-content: space-between;
     padding: 0 5vw;
     box-sizing: border-box;
@@ -26,7 +27,7 @@ const nav = styled.nav`
 const main = styled.main`
     width: ${ props => props.about ? '40%' : '100%' };
     height: 100vh;
-    padding: ${ props => props.about ? '0 5vw 10vh 5vw' : '15vh 0 10vh 0' };
+    padding: ${ props => props.about ? '15vh 5vw 10vh 5vw' : '20vh 0 2vh 0' };
     display: flex;
     flex-direction: column;
     align-items: ${ props => props.about ? 'flex-start' : 'center' };
