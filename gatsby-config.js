@@ -20,7 +20,7 @@ module.exports = {
         fonts: [
           {
             family: `Rubik`,
-            variants: [`300`, `400`, `700`]
+            variants: [`300`, `400`, `500`, `700`]
           },
           {
             family: `Aleo`,

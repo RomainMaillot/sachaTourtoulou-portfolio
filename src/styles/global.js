@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     }
     html {
         font-size: 14px;
+        overflow-x: hidden;
     }
 `
 

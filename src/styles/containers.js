@@ -46,14 +46,33 @@ const about = styled.main`
     box-sizing: border-box;
 `
 
-const work = styled.main`
+const work = styled.div`
     width: 100%;
-    height: 100vh;
     padding: 15vh 5vw 10vh 5vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
+`
+
+const content = styled.main`
+    width: 100%;
+    padding: 10vh 5vw 10vh 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    .col {
+        width: 50%;
+        margin-top: 20px;
+        .row {
+            margin: 20px 0;
+            .paragraphe {
+                width: 70%;
+                text-align: left;
+            }
+        }
+    }
 `
 
 const project = styled.div`
@@ -129,5 +148,6 @@ export {
     work,
     project,
     row,
-    col
+    col,
+    content
 }

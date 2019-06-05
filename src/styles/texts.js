@@ -6,8 +6,16 @@ const title = styled.h1`
     font-size: ${props => props.header ? sizes.header : sizes.title};
     color: white;
     margin: 0;
-    font-weight: 700;
+    font-weight: 500;
 `
+
+const contentTitle = styled.h1`
+    font-size: ${props => props.header ? sizes.header : sizes.title};
+    color: white;
+    margin: 0;
+    font-weight: 500;
+`
+
 const text = styled.p`
     font-size: ${sizes.text};
     color: white;
@@ -107,6 +115,14 @@ const more = styled(number)`
     }
 `
 
+const info = styled.h4`
+    font-size: ${sizes.footer};
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+`
+
 export {
     title,
     text,
@@ -116,7 +132,9 @@ export {
     button,
     description,
     projectTitle,
+    contentTitle,
     theme,
     number,
-    more
+    more,
+    info
 }

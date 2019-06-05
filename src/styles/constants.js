@@ -17,7 +17,7 @@ const sizes = {
     footer: '1.2em',
     title: '2.5rem',
     textBig: '2rem',
-    text: '1em',
+    text: '1.44rem',
     button: '1.2rem',
     tiny: '0.83rem'
 }
