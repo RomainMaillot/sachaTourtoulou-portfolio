@@ -46,6 +46,16 @@ const about = styled.main`
     box-sizing: border-box;
 `
 
+const contact = styled.main`
+    width: 100%;
+    height: 100vh;
+    padding: 15vh 5vw 10vh 5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+`
+
 const work = styled.div`
     width: 100%;
     padding: 15vh 5vw 10vh 5vw;
@@ -62,7 +72,7 @@ const content = styled.main`
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
-    .col {
+    .col:nth-of-type(1) {
         width: 50%;
         margin-top: 20px;
         .row {
@@ -71,6 +81,30 @@ const content = styled.main`
                 width: 70%;
                 text-align: left;
             }
+        }
+        .img
+        {
+            width: 100%;
+        }
+    }
+    .col {
+        width: 100%;
+        margin-top: 20px;
+        text-align: right;
+        p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+    }
+    .next {
+        align-items: center;
+        align-self: center;
+        h2 {
+            margin-bottom: 10px;
+        }
+        .paragraphe {
+            font-weight: 400;
+            margin-bottom: 20px;
         }
     }
 `
@@ -137,6 +171,67 @@ const logos = styled.div`
     }
 `
 
+const form = styled.form`
+    width: 40%;
+    background: white;
+    border-radius: 10px;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+const label = styled.label`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: ${colors.grey};
+    border: solid ${colors.darkGrey} 2px;
+    border-radius: 5px;
+    padding: 7px 25px;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    &.fill {
+        border: solid ${colors.green} 2px;
+    }
+    span {
+        position: absolute;
+        padding-bottom: 7px;
+        opacity: 0;
+        transform: translateX(10%);
+        transition: all 2s ease;
+    }
+    span.fill {
+        position: relative;
+        opacity: 0.8;
+        transform: translateX(0);
+        display: block;
+    }
+`
+
+const input = styled.input`
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    font-size: ${sizes.footer};
+    outline: none;
+`
+
+const textarea = styled.textarea`
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    font-size: ${sizes.footer};
+    outline: none;
+    resize: none;
+`
+
 export {
     header,
     nav,
@@ -149,5 +244,10 @@ export {
     project,
     row,
     col,
-    content
+    content,
+    contact,
+    form,
+    label,
+    input,
+    textarea
 }

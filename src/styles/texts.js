@@ -63,12 +63,31 @@ const button = styled(Link)`
     background: ${colors.yellow};
     text-decoration: none;
     font-weight: 700;
-    font-size: ${sizes.button}
+    font-size: ${sizes.button};
+`
+const submit = styled.button`
+    color: black;
+    width: 150px;
+    border-radius: 2px;
+    padding: 10px 30px;
+    vertical-align: center;
+    background: ${colors.yellow};
+    text-decoration: none;
+    font-weight: 700;
+    font-size: ${sizes.button};
+    outline: none;
+    border: none;
 `
 
 const projectTitle = styled.h2`
     font-size: ${sizes.description};
     color: white;
+`
+
+const formTitle = styled.h2`
+    font-size: ${sizes.textBig};
+    color: black;
+    margin: 0;
 `
 
 const theme = styled.p`
@@ -136,5 +155,7 @@ export {
     theme,
     number,
     more,
-    info
+    info,
+    formTitle,
+    submit
 }

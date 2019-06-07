@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { texts, containers } from '../styles/index'
 import BackgroundImage from 'gatsby-background-image'
 import Project from '../components/project'
+import Img from "gatsby-image"
 
 const Work = () => (
   <>
@@ -13,6 +14,13 @@ const Work = () => (
         query WorkImageQuery {
           work: file(relativePath: { eq: "backgrounds/work_bg.png" }) {
             ...background
+          }
+          project: file(relativePath: { eq: "project1-2.jpg" }) {
+            childImageSharp {
+                fluid(quality: 90, maxWidth: 1080) {
+                ...GatsbyImageSharpFluid
+                }
+            }
           }
         }
       `}
@@ -51,6 +59,15 @@ const Work = () => (
                   So I chose to work on this project, small edible pellets that respect the environment and the body. The challenge of this project was to address a very limited target audience by transcribing the brand's strong storytelling on the site.
                 </texts.text>
               </containers.row>
+            </containers.col>
+            <containers.col className="col">
+              <div className='img'><Img fluid={data.project.childImageSharp.fluid} /></div>
+              <texts.text>Part of the model of the home page</texts.text>
+            </containers.col>
+            <containers.col className="next">
+              <texts.projectTitle>Web application</texts.projectTitle>
+              <texts.theme className="paragraphe">UX / UI Design & Branding</texts.theme>
+              <texts.button>Next project</texts.button>
             </containers.col>
           </containers.content>
         </>
