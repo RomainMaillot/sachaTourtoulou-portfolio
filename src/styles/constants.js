@@ -1,9 +1,10 @@
 const colors = {
+    blue: '#0F3A84',
     darkBlue: '#190E4D',
-    grey: '#F8F8F8',
+    grey: '#ECF0F1',
+    yellow: '#FFBE26',
     green: '#85E695',
     darkGrey: '#EEEEEE',
-    yellow: '#FFBE26'
 }
 
 const sizes = {
