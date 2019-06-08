@@ -25,14 +25,28 @@ const nav = styled.nav`
 `
 
 const main = styled.main`
-    width: ${ props => props.about ? '40%' : '100%' };
+    width: 100%;
     height: 100vh;
-    padding: ${ props => props.about ? '15vh 5vw 10vh 5vw' : '20vh 0 2vh 0' };
+    padding: 20vh 0 2vh 0;
     display: flex;
     flex-direction: column;
-    align-items: ${ props => props.about ? 'flex-start' : 'center' };
-    justify-content: ${ props => props.about ? 'space-around' : 'space-between' };
+    align-items: center;
+    justify-content: space-between;
     box-sizing: border-box;
+`
+
+const error = styled.main`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    a {
+        position: absolute;
+        bottom: 10vh;
+    }
 `
 
 const about = styled.main`
@@ -91,6 +105,7 @@ const content = styled.main`
         width: 100%;
         margin-top: 20px;
         text-align: right;
+        margin-bottom: 10vh;
         p {
             margin-top: 10px;
             font-size: 1rem;
@@ -249,5 +264,6 @@ export {
     form,
     label,
     input,
-    textarea
+    textarea,
+    error
 }

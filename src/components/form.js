@@ -4,21 +4,6 @@ import { texts, containers } from '../styles';
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-// const state = {
-//     firstName: "",
-//     lastName: "",
-// }
-
-// const handleInputChange = event => {
-//     const target = event.target
-//     const value = event.value
-//     const name = event.name
-
-//     this.setState({
-//         [name]: value,
-//     })
-// }
-
 class Form extends Component {
     constructor(props) {
         super(props);
@@ -90,24 +75,5 @@ class Form extends Component {
         )
     }
 }
-
-// const Form = () => (
-//     <containers.form>
-//         <texts.formTitle>Say hello !</texts.formTitle>
-//         <label>
-//             First name
-//             <input 
-//                 type="text" 
-//                 name="firstName"
-//                 value={state.firstName}
-//                 onChange={handleInputChange}/>
-//         </label>
-//         <label>
-//             Last name
-//             <input type="text" name="lastName"/>
-//         </label>
-//         <button type="submit">Submit</button>
-//     </containers.form>
-// )
 
 export default Form

@@ -22,6 +22,13 @@ const Work = () => (
                 }
             }
           }
+          project2: file(relativePath: { eq: "project1-3.jpg" }) {
+            childImageSharp {
+                fluid(quality: 90, maxWidth: 1080) {
+                ...GatsbyImageSharpFluid
+                }
+            }
+          }
         }
       `}
       render={data => (
@@ -63,6 +70,10 @@ const Work = () => (
             <containers.col className="col">
               <div className='img'><Img fluid={data.project.childImageSharp.fluid} /></div>
               <texts.text>Part of the model of the home page</texts.text>
+            </containers.col>
+            <containers.col className="col">
+              <div className='img'><Img fluid={data.project2.childImageSharp.fluid} /></div>
+              <texts.text>Part of the model of the flavours page</texts.text>
             </containers.col>
             <containers.col className="next">
               <texts.projectTitle>Web application</texts.projectTitle>
