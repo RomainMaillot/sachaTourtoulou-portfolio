@@ -21,7 +21,13 @@ const sizes = {
     tiny: '0.83rem'
 }
 
+const breakpoints = {
+    medium: '1200px',
+    small: '768px'
+}
+
 export {
     colors,
-    sizes
+    sizes,
+    breakpoints
 }

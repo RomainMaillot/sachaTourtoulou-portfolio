@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { colors } from './constants'
+import { colors, breakpoints } from './constants'
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -13,6 +13,9 @@ const GlobalStyle = createGlobalStyle`
     html {
         font-size: 14px;
         overflow-x: hidden;
+        @media (max-width: ${breakpoints.medium}) {
+            font-size: 16px;
+        }
     }
 `
 

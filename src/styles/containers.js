@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, sizes } from './constants'
+import { colors, sizes, breakpoints } from './constants'
 
 const header = styled.header`
     height: 8vh;
@@ -30,6 +30,9 @@ const main = styled.main`
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    @media (max-width: ${breakpoints.medium}) {
+        padding: 20vh 0 10vh 0;
+    }
 `
 
 const error = styled.main`
@@ -55,6 +58,9 @@ const about = styled.main`
     align-items: flex-start;
     justify-content: space-around;
     box-sizing: border-box;
+    @media (max-width: ${breakpoints.medium}) {
+        width: 70%;
+    }
 `
 
 const contact = styled.main`
@@ -65,6 +71,10 @@ const contact = styled.main`
     flex-direction: row;
     justify-content: space-between;
     box-sizing: border-box;
+    @media (max-width: ${breakpoints.medium}) {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 `
 
 const work = styled.div`
@@ -95,6 +105,9 @@ const content = styled.main`
         }
         .img
         {
+            width: 100%;
+        }
+        @media (max-width: ${breakpoints.medium}) {
             width: 100%;
         }
     }
@@ -140,6 +153,7 @@ const project = styled.div`
         position: absolute;
         top: 5%;
         left: 105%;
+        cursor: pointer;
     }
 `
 
@@ -200,6 +214,12 @@ const form = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (max-width: ${breakpoints.medium}) {
+        width: 80%;
+        height: 100%;
+        align-self: center;
+        margin-top: 5vh;
+    }
 `
 
 const label = styled.label`

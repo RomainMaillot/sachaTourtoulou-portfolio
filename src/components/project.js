@@ -15,6 +15,10 @@ class Project extends Component {
         }
     }
 
+    handleClick = () => {
+        console.log('hey')
+    }
+
     render() {
         return(
             <StaticQuery
@@ -39,7 +43,7 @@ class Project extends Component {
                             </containers.col>
                             <texts.number>01/02</texts.number>
                         </containers.row>
-                        <div className='img-after'><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>
+                        <div className='img-after' onClick={this.handleClick}><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>
                     </containers.project>
                 }
             />
