@@ -133,8 +133,16 @@ const project = styled.div`
     align-items: flex-start;
     justify-content: space-between;
     box-sizing: border-box;
+    position: relative;
     .img {
         width: 100%;
+        position: relative;
+    }
+    .img-after {
+        width: 90%;
+        position: absolute;
+        top: 5%;
+        left: 105%;
     }
 `
 
@@ -208,8 +216,31 @@ const label = styled.label`
     box-sizing: border-box;
     position: relative;
     font-family: 'Rubik', sans-serif;
+    &::after {
+        content: "Invalid email address";
+        position: absolute;
+        font-size: ${sizes.footer};
+        font-weight: 300;
+        top: 0;
+        left: 0;
+        padding: 25px 30px;
+        text-align: center;
+        background: white;
+        border-bottom: solid ${colors.darkRed} 5px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        box-shadow: 0px 0px 11px rgba(0,0,0,0.19);
+    }
     &.fill {
         border: solid ${colors.green} 2px;
+    }
+    &.invalid {
+        border: solid ${colors.red} 2px;
+    }
+    &.invalid::after {
+        opacity: 1;
+        transform: translateY(-20%) translateX(-120%);
     }
     span {
         position: absolute;

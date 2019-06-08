@@ -9,9 +9,18 @@ class Form extends Component {
         super(props);
         this.props = props;
         this.state = {
-            name: "",
-            email: "",
-            message: "",
+            name: {
+                content: "",
+                state: ""
+            },
+            email: {
+                content: "",
+                state: ""
+            },
+            message: {
+                content: "",
+                state: ""
+            },
         }
     }
     
@@ -19,21 +28,70 @@ class Form extends Component {
         const target = event.target
         const value = target.value
         const name = target.name
+        console.log('name' + this.state.name.content)
+        console.log('email' + this.state.email.content)
+        console.log('message' +this.state.message.content)
     
         this.setState({
-            [name]: value,
+            [name]: {
+                content: value,
+                state: "",
+            }
         })
     }
 
     handleSubmit = event => {
         event.preventDefault()
-        alert(`You : ${this.state.name} email: ${this.state.email} and you say : ${this.state.message} !`)
+        if(this.state.name.state === "fill" && this.state.email.state === "fill" && this.state.message.state === "fill")
+        {
+            alert(`You : ${this.state.name.content} email: ${this.state.email.content} and you say : ${this.state.message.content} !`)
+        }
+    }
+
+    validateEmail = email => {
+        let regex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        return regex.test(email)
     }
 
     handleBlur = event => {
         event.preventDefault()
-        event.target.previousSibling.classList.add('fill')
-        event.target.parentNode.classList.add('fill')
+        const name = event.target.name
+        const content = event.target.value
+        if(event.target.value !== "" && event.target.name !== "email")
+        {
+            event.target.previousSibling.classList.add('fill')
+            event.target.parentNode.classList.add('fill')
+            this.setState({
+                [name]: {
+                    content: content,
+                    state: "fill",
+                }
+            })
+        }
+        if(event.target.name === "email" && !this.validateEmail(event.target.value))
+        {
+            event.target.parentNode.classList.add('invalid')
+            this.setState({
+                [name]: {
+                    content: content,
+                    state: "",
+                }
+            })
+        }
+        else {
+            event.target.parentNode.classList.remove('invalid')
+            event.target.previousSibling.classList.add('fill')
+            event.target.parentNode.classList.add('fill')
+            this.setState({
+                [name]: {
+                    content: content,
+                    state: "fill",
+                }
+            })
+        }
+        console.log('name' + this.state.name.content)
+        console.log('email' + this.state.email.content)
+        console.log('message' +this.state.message.content)
     }
 
     render() {
@@ -46,7 +104,7 @@ class Form extends Component {
                         type="text" 
                         name="name"
                         placeholder="Name"
-                        value={this.state.firstName}
+                        value={this.state.name.content}
                         onChange={this.handleInputChange}
                         onBlur={this.handleBlur}></containers.input>
                 </containers.label>
@@ -56,7 +114,7 @@ class Form extends Component {
                         type="text" 
                         name="email"
                         placeholder="Email adress"
-                        value={this.state.email}
+                        value={this.state.email.content}
                         onChange={this.handleInputChange}
                         onBlur={this.handleBlur}></containers.input>
                 </containers.label>
@@ -66,7 +124,7 @@ class Form extends Component {
                         type="textarea" 
                         name="message"
                         placeholder="Message"
-                        value={this.state.message}
+                        value={this.state.message.content}
                         onChange={this.handleInputChange}
                         onBlur={this.handleBlur}></containers.textarea>
                 </containers.label>

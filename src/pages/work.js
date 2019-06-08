@@ -43,7 +43,7 @@ const Work = () => (
             <containers.work>
               <SEO title="Projects" description="This is my description for my project page." />
               <texts.title>My work</texts.title>
-              <Project />
+              <Project oui="oui" />
               <texts.more>Show me more</texts.more>
             </containers.work>
           </BackgroundImage>
