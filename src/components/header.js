@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { texts, containers } from '../styles';
+import MenuToggle from '../components/toggle'
 
 const Header = ({ siteTitle, location }) => (
   <containers.header>
@@ -17,6 +18,7 @@ const Header = ({ siteTitle, location }) => (
         </Link>
       </texts.title>
       <containers.nav>
+        <MenuToggle />
         <texts.headerLink
           to="/about"
           style={{

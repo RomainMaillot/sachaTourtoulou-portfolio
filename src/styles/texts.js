@@ -1,5 +1,5 @@
 import styled,{ keyframes } from 'styled-components'
-import { sizes, colors } from './constants'
+import { sizes, colors, breakpoints } from './constants'
 import { Link } from "gatsby"
 
 const title = styled.h1`
@@ -29,6 +29,10 @@ const textBig = styled.p`
     width: 50%;
     margin: 0;
     text-align: center;
+    @media (max-width: ${breakpoints.small}) {
+        width: 80%;
+        font-size: ${sizes.header}
+    }
 `
 
 const footer = styled.p`

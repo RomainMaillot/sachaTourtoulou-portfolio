@@ -18,6 +18,76 @@ const nav = styled.nav`
     flex-direction: row;
     justify-content: space-between;
     width: 30%;
+    .menu-toggle {
+        cursor: pointer;
+        display: none;
+        position: fixed;
+        right: 10px;
+        top: 104vh;
+        width: 30px;
+        height: 3px;
+        background: white;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 8px;
+            width: 30px;
+            height: 3px;
+            background: white;
+            border-radius: 15px;
+            transform-origin: right;
+            transform: scaleX(0.8);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 8px;
+            width: 30px;
+            height: 3px;
+            background: white;
+            border-radius: 15px;
+            transform-origin: right;
+            transform: scaleX(0.8);
+        }
+    }
+    @media (max-width: ${breakpoints.small}) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        will-change: transform;
+        background: ${colors.darkBlue};
+        a {
+            padding-bottom: 10px;
+        }
+        &.toggle {
+            transform: translateY(0);
+        }
+        .menu-toggle {
+            display: block;
+            &.toggle {
+                top: 30px;
+                transform: rotate(45deg);
+                &::after {
+                    transform: scaleX(1) rotate(90deg) translate(25%,490%);
+                }
+                &::before {
+                    opacity: 0;
+                }
+            }
+        }
+    }
 `
 
 const main = styled.main`
@@ -59,6 +129,9 @@ const about = styled.main`
     box-sizing: border-box;
     @media (max-width: ${breakpoints.medium}) {
         width: 70%;
+    }
+    @media (max-width: ${breakpoints.small}) {
+        width: 90%;
     }
 `
 
@@ -185,6 +258,9 @@ const logo = styled.div`
     justify-content: space-between;
     width: 10%;
     margin-bottom: 10px;
+    @media (max-width: ${breakpoints.small}) {
+        width: 20%;
+    }
 `
 
 const logos = styled.div`
@@ -219,9 +295,14 @@ const form = styled.form`
         align-self: center;
         margin-top: 5vh;
     }
+    @media (max-width: ${breakpoints.small}) {
+        width: 90%;
+        padding: 30px;
+    }
 `
 
 const label = styled.label`
+    cursor: text;
     width: 100%;
     display: flex;
     flex-direction: column;
