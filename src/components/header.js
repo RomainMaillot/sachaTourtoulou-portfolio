@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { texts, containers } from '../styles';
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, location }) => (
   <containers.header>
       <texts.title header>
         <Link
@@ -17,33 +17,36 @@ const Header = ({ siteTitle }) => (
         </Link>
       </texts.title>
       <containers.nav>
-        <Link
+        <texts.headerLink
           to="/about"
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
+          active={location.pathname === "/about" ? 'true' : ''}
         >
           About
-        </Link>
-        <Link
+        </texts.headerLink>
+        <texts.headerLink
           to="/work"
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
+          active={location.pathname === "/work" ? 'true' : ''}
         >
           Work
-        </Link>
-        <Link
+        </texts.headerLink>
+        <texts.headerLink
           to="/contact"
           style={{
             color: `white`,
             textDecoration: `none`,
           }}
+          active={location.pathname === "/contact" ? 'true' : ''}
         >
           Contact
-        </Link>
+        </texts.headerLink>
       </containers.nav>
   </containers.header>
 )

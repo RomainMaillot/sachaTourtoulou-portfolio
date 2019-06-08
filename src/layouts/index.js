@@ -58,7 +58,7 @@ const Layout = ({ children, location }) => (
     render={data => (
       <>
         <GlobalStyles />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} location={location}/>
         <Transition location={location}>
           {children}
         </Transition>

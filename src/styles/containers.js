@@ -19,9 +19,6 @@ const nav = styled.nav`
     flex-direction: row;
     justify-content: space-between;
     width: 30%;
-    a {
-        font-size: ${sizes.header};
-    }
 `
 
 const main = styled.main`

@@ -142,6 +142,11 @@ const info = styled.h4`
     margin: 0;
 `
 
+const headerLink = styled(Link)`
+    font-size: ${sizes.header};
+    font-weight: ${props => props.active ? '700' : '400'};
+`
+
 export {
     title,
     text,
@@ -157,5 +162,6 @@ export {
     more,
     info,
     formTitle,
-    submit
+    submit,
+    headerLink
 }
