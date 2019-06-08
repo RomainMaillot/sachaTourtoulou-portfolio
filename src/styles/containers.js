@@ -12,7 +12,6 @@ const header = styled.header`
     justify-content: space-between;
     padding: 0 5vw;
     box-sizing: border-box;
-    font-family: 'Source Sans Pro', sans-serif;
 `
 const nav = styled.nav`
     display: flex;

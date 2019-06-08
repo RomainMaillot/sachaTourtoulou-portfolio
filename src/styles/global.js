@@ -16,6 +16,9 @@ const GlobalStyle = createGlobalStyle`
         @media (max-width: ${breakpoints.medium}) {
             font-size: 16px;
         }
+        @media (max-width: ${breakpoints.small}) {
+            font-size: 12px;
+        }
     }
 `
 
