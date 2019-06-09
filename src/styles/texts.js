@@ -25,10 +25,13 @@ const text = styled.p`
 const textBig = styled.p`
     font-size: ${sizes.textBig};
     color: white;
-    font-weight: bold;
     width: 50%;
     margin: 0;
     text-align: center;
+    line-height: 40px;
+    span {
+        font-weight: bold;
+    }
     @media (max-width: ${breakpoints.small}) {
         width: 80%;
         font-size: ${sizes.header}
@@ -37,26 +40,30 @@ const textBig = styled.p`
 
 const footer = styled.p`
     font-size: ${sizes.footer};
-    font-weight: ${props => props.bold ? '700' : 'normal'};
+    font-weight: 300;
     color: white;
     margin: 0;
     opacity: 0.75;
 `
 
 const credits = styled.p`
-    font-size: ${sizes.text};
-    font-weight: '700';
+    font-weight: bold;
     color: white;
     margin-top: 2vh;
     opacity: 0.5;
     a {
         color: white;
+        text-decoration: none;
     }
 `
 
 const description = styled.p`
     font-size: ${sizes.description};
     color: white;
+    line-height: 30px;
+    span {
+        font-weight: bold;
+    }
 `
 
 const button = styled(Link)`
@@ -67,11 +74,28 @@ const button = styled(Link)`
     vertical-align: center;
     background: ${colors.yellow};
     text-decoration: none;
-    font-weight: 700;
+    font-weight: normal;
     font-size: ${sizes.button};
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: ${colors.orange};
+        border-radius: 2px;
+        z-index: -10;
+    }
+    &:hover {
+        background: transparent;
+    }
 `
 
 const buttonProject = button.withComponent('div')
+const resume = button.withComponent('a')
 
 const submit = styled.button`
     color: black;
@@ -90,6 +114,7 @@ const submit = styled.button`
 const projectTitle = styled.h2`
     font-size: ${sizes.description};
     color: white;
+    font-weight: normal;
 `
 
 const formTitle = styled.h2`
@@ -100,7 +125,7 @@ const formTitle = styled.h2`
 
 const theme = styled.p`
     font-size: ${sizes.description};
-    font-weight: bold;
+    font-weight: normal;
     color: white;
     opacity: 0.5;
     margin: 0;
@@ -172,5 +197,6 @@ export {
     formTitle,
     submit,
     headerLink,
-    buttonProject
+    buttonProject,
+    resume
 }

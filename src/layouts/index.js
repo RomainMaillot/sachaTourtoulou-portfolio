@@ -66,9 +66,9 @@ const Layout = ({ children, location }) => (
           <containers.logo>
             <a href="https://dribbble.com/sachatourtoulou" target="_blank" rel="noopener noreferrer"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
             <a href="https://www.linkedin.com/in/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
-            <a href="#" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
+            <a href="https://www.flickr.com/photos/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
           </containers.logo>
-          <texts.footer bold>
+          <texts.footer>
             © {new Date().getFullYear()}, Sacha Tourtoulou. All rights reserved.
           </texts.footer>
           <texts.footer>

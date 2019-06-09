@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors, sizes, breakpoints } from './constants'
 
 const header = styled.header`
-    height: 8vh;
+    height: 10vh;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -17,7 +17,7 @@ const nav = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 30%;
+    width: 20%;
     .menu-toggle {
         cursor: pointer;
         display: none;
@@ -93,7 +93,7 @@ const nav = styled.nav`
 const main = styled.main`
     width: 100%;
     height: 100vh;
-    padding: 20vh 0 2vh 0;
+    padding: 20vh 0 4vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,6 +151,7 @@ const contact = styled.main`
 
 const work = styled.div`
     width: 100%;
+    height: 100vh;
     padding: 15vh 5vw 10vh 5vw;
     display: flex;
     flex-direction: column;
@@ -190,7 +191,8 @@ const content = styled.main`
         margin-bottom: 10vh;
         p {
             margin-top: 10px;
-            font-size: 1rem;
+            font-size: ${sizes.description};
+            line-height: 30px;
         }
     }
     .next {
@@ -207,7 +209,7 @@ const content = styled.main`
 `
 
 const project = styled.div`
-    width: 90%;
+    width: 80%;
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
@@ -223,7 +225,7 @@ const project = styled.div`
         position: relative;
     }
     .img-after {
-        width: 90%;
+        width: 80%;
         position: absolute;
         top: 5%;
         left: 105%;
@@ -248,6 +250,7 @@ const col = styled.div`
 
 const footer = styled.footer`
     display: flex;
+    height: 20vh;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;

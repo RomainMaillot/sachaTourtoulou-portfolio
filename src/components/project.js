@@ -113,31 +113,31 @@ class Project extends Component {
                         <containers.content>
                             <texts.contentTitle>{data.allProjectsJson.edges[this.state.project].node.title}</texts.contentTitle>
                             <containers.col className="col">
-                            <containers.row className="row">
-                                <texts.info>Year</texts.info>
-                                <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.year}</texts.text>
-                            </containers.row>
-                            <containers.row className="row">
-                                <texts.info>Role</texts.info>
-                                <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.role}</texts.text>
-                            </containers.row>
-                            <containers.row className="row">
-                                <texts.info>Context</texts.info>
-                                <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.context}</texts.text>
-                            </containers.row>
-                            </containers.col>
-                            <containers.col className="col">
-                            <div className='img'><Img fluid={data.project.childImageSharp.fluid} /></div>
-                            <texts.text>Part of the model of the home page</texts.text>
-                            </containers.col>
-                            <containers.col className="col">
-                            <div className='img'><Img fluid={data.project2.childImageSharp.fluid} /></div>
-                            <texts.text>Part of the model of the flavours page</texts.text>
+                                <containers.row className="row">
+                                    <texts.info>Year</texts.info>
+                                    <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.year}</texts.text>
+                                </containers.row>
+                                <containers.row className="row">
+                                    <texts.info>Role</texts.info>
+                                    <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.role}</texts.text>
+                                </containers.row>
+                                <containers.row className="row">
+                                    <texts.info>Context</texts.info>
+                                    <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.context}</texts.text>
+                                </containers.row>
+                                </containers.col>
+                                <containers.col className="col">
+                                <div className='img'><Img fluid={data.project.childImageSharp.fluid} /></div>
+                                <texts.text>Part of the model of the home page</texts.text>
+                                </containers.col>
+                                <containers.col className="col">
+                                <div className='img'><Img fluid={data.project2.childImageSharp.fluid} /></div>
+                                <texts.text>Part of the model of the flavours page</texts.text>
                             </containers.col>
                             <containers.col className="next">
-                            <texts.projectTitle>Web application</texts.projectTitle>
-                            <texts.theme className="paragraphe">UX / UI Design & Branding</texts.theme>
-                            <texts.buttonProject onClick={this.handleClick} rel="noopener noreferrer">Next project</texts.buttonProject>
+                                <texts.projectTitle>Web application</texts.projectTitle>
+                                <texts.theme className="paragraphe">UX / UI Design & Branding</texts.theme>
+                                <texts.buttonProject onClick={this.handleClick} rel="noopener noreferrer">Next project</texts.buttonProject>
                             </containers.col>
                         </containers.content>
                     </>

@@ -40,16 +40,16 @@ const About = () => (
           <SEO title="About" />
           <texts.title>About me</texts.title>
           <div>
-            <texts.description>Hi there! I’m Sacha Tourtoulou, a digital designer from Paris, France. I’m focused on UI/UX Design, Illustration & Motion Design and I also appreciate Photography, Branding and Print.</texts.description>
-            <texts.description>Currently student at HETIC, I’m looking for a 2 month internship from August 2019 in Paris.</texts.description>
-            <texts.description>Feel free to contact me! </texts.description>
+            <texts.description>Hi there! I’m <span>Sacha Tourtoulou</span>, a digital designer from Paris, France. I’m focused on UI/UX Design, Illustration & Motion Design and I also appreciate Photography, Branding and Print.</texts.description>
+            <texts.description>Currently student at <span>HETIC</span>, I’m looking for a 2 month internship from August 2019 in Paris.</texts.description>
+            <texts.description>Feel free to <span>contact me</span>! </texts.description>
           </div>
           <containers.logos>
             <a href="https://dribbble.com/sachatourtoulou" target="_blank" rel="noopener noreferrer"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
             <a href="https://www.linkedin.com/in/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
-            <a href="#" target="_blank" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
+            <a href="https://www.flickr.com/photos/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
           </containers.logos>
-          <texts.button to="#" rel="noopener noreferrer">My resume</texts.button>
+          <texts.resume href="documents/resume.pdf" target="_blank" rel="noopener noreferrer">My resume</texts.resume>
         </containers.about>
       </BackgroundImage>
         )}
