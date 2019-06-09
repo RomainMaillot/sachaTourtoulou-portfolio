@@ -98,6 +98,7 @@ const buttonProject = button.withComponent('div')
 const resume = button.withComponent('a')
 
 const submit = styled.button`
+    cursor: pointer;
     color: black;
     width: 150px;
     border-radius: 2px;

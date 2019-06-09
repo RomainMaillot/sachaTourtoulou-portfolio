@@ -9,6 +9,7 @@ This is the portfolio of a french designer, he designed his portfolio and I deve
   * Email verification
 * Download his resume
 * Responsive
+* Handle 404
 
 ## Build with
 * [Gatsby](https://www.gatsbyjs.org/) - React framework to make SEO easier

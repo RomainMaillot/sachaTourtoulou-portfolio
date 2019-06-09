@@ -44,7 +44,8 @@ class Form extends Component {
         event.preventDefault()
         if(this.state.name.state === "fill" && this.state.email.state === "fill" && this.state.message.state === "fill")
         {
-            alert(`You : ${this.state.name.content} email: ${this.state.email.content} and you say : ${this.state.message.content} !`)
+            const link = `mailto:sacha.tourtoulou@live.fr?cc=${this.state.email.content}&body=Hi I'm ${this.state.name.content}, ${this.state.message.content}`
+            window.location.href = link
         }
     }
 
