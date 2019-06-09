@@ -4,6 +4,12 @@ import React from "react"
 import { texts, containers } from '../styles';
 import MenuToggle from '../components/toggle'
 
+const handleClick = event => {
+  const menu = document.querySelector('.menu-toggle')
+  menu.classList.toggle('toggle')
+  event.target.parentNode.classList.toggle('toggle')
+}
+
 const Header = ({ siteTitle, location }) => (
   <containers.header>
       <texts.title header>
@@ -25,6 +31,7 @@ const Header = ({ siteTitle, location }) => (
             color: `white`,
             textDecoration: `none`,
           }}
+          onClick={handleClick}
           active={location.pathname === "/about" ? 'true' : ''}
         >
           About
@@ -35,6 +42,7 @@ const Header = ({ siteTitle, location }) => (
             color: `white`,
             textDecoration: `none`,
           }}
+          onClick={handleClick}
           active={location.pathname === "/work" ? 'true' : ''}
         >
           Work
@@ -45,6 +53,7 @@ const Header = ({ siteTitle, location }) => (
             color: `white`,
             textDecoration: `none`,
           }}
+          onClick={handleClick}
           active={location.pathname === "/contact" ? 'true' : ''}
         >
           Contact

@@ -23,7 +23,7 @@ const nav = styled.nav`
         display: none;
         position: fixed;
         right: 10px;
-        top: 104vh;
+        top: calc(100vh + 30px);
         width: 30px;
         height: 3px;
         background: white;
