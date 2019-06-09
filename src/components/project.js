@@ -67,6 +67,14 @@ class Project extends Component {
                             }
                         }
                     }
+                    allProjectsImages2Json {
+                        edges {
+                            node {
+                                url
+                                description
+                            }
+                        }
+                    }
                     placeholderImage: file(relativePath: { eq: "projet1.jpg" }) {
                         childImageSharp {
                             fluid(quality: 90, maxWidth: 1080) {
@@ -114,7 +122,7 @@ class Project extends Component {
                                     </containers.col>
                                     <texts.number>0{this.state.project+1}/0{data.allProjectsJson.edges.length}</texts.number>
                                 </containers.row>
-                                <div className='img-after' onClick={this.handleClick}><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>
+                                <div className='img-after' onClick={this.handleClick}><img src={withPrefix((this.state.project + 1) === data.allProjectsJson.edges.length ? data.allProjectsJson.edges[0].node.imageOverview : data.allProjectsJson.edges[this.state.project + 1].node.imageOverview)} /></div>
                             </containers.project>
                             <texts.more>Show me more</texts.more>
                             </containers.work>
@@ -135,12 +143,23 @@ class Project extends Component {
                                     <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.context}</texts.text>
                                 </containers.row>
                             </containers.col>
-                            {data.allProjectsImagesJson.edges.map((image, key) =>
-                                <containers.col test={console.log(image.node.url)} key={key.toString()} className="col">
-                                    <div className='img'><img src={image.node.url} /></div>
-                                    <texts.text>{image.node.description}</texts.text>
-                                </containers.col>
-                            )}
+                            <containers.row className="row-wrap">
+                                {this.state.project == 0 ?
+                                    data.allProjectsImagesJson.edges.map((image, key) =>
+                                        <containers.col key={key.toString()} className="col">
+                                            <div className='img'><img src={image.node.url} /></div>
+                                            <texts.text>{image.node.description}</texts.text>
+                                        </containers.col>
+                                    )
+                                    :
+                                    data.allProjectsImages2Json.edges.map((image, key) =>
+                                            <containers.col key={key.toString()} className="col-sm">
+                                                <div className='img'><img src={image.node.url} /></div>
+                                                <texts.text>{image.node.description}</texts.text>
+                                            </containers.col>
+                                    )
+                                }
+                            </containers.row>
                             <containers.col className="next">
                                 <texts.projectTitle>{(this.state.project + 1) === data.allProjectsJson.edges.length ? data.allProjectsJson.edges[0].node.title : data.allProjectsJson.edges[this.state.project + 1].node.title}</texts.projectTitle>
                                 <texts.theme className="paragraphe">{(this.state.project + 1) === data.allProjectsJson.edges.length ? data.allProjectsJson.edges[0].node.theme : data.allProjectsJson.edges[this.state.project + 1].node.theme}</texts.theme>

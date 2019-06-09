@@ -166,7 +166,7 @@ const content = styled.main`
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
-    .col:nth-of-type(1) {
+    & > .col:nth-of-type(1) {
         width: 50%;
         margin-top: 20px;
         .row {
@@ -180,8 +180,31 @@ const content = styled.main`
             width: 100%;
         }
     }
+    .row-wrap {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
     .col {
         width: 100%;
+        margin-top: 20px;
+        text-align: right;
+        margin-bottom: 10vh;
+        p {
+            margin-top: 10px;
+            font-size: ${sizes.description};
+            line-height: 30px;
+        }
+        .img
+        {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .col-sm {
+        width: 30%;
         margin-top: 20px;
         text-align: right;
         margin-bottom: 10vh;
@@ -236,6 +259,9 @@ const project = styled.div`
         top: 5%;
         left: 105%;
         cursor: pointer;
+        img {
+            width: 100%;
+        }
     }
     &.disappear {
         opacity: 0;

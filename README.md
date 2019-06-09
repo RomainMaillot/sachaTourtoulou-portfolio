@@ -6,6 +6,7 @@ This is the portfolio of a french designer, he designed his portfolio and I deve
 
 * Discover all his projects
 * Possibility to contact him by mail
+  * Email verification
 * Download his resume
 * Responsive
 
