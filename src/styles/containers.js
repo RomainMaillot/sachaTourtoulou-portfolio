@@ -216,6 +216,8 @@ const project = styled.div`
     justify-content: space-between;
     box-sizing: border-box;
     position: relative;
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
     .img {
         width: 100%;
         position: relative;
@@ -226,6 +228,9 @@ const project = styled.div`
         top: 5%;
         left: 105%;
         cursor: pointer;
+    }
+    &.disappear {
+        opacity: 0;
     }
 `
 

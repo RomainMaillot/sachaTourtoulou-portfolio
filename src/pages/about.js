@@ -45,11 +45,11 @@ const About = () => (
             <texts.description>Feel free to contact me! </texts.description>
           </div>
           <containers.logos>
-            <a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
+            <a href="https://dribbble.com/sachatourtoulou" target="_blank" rel="noopener noreferrer"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
+            <a href="https://www.linkedin.com/in/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
           </containers.logos>
-          <texts.button>My resume</texts.button>
+          <texts.button to="#" rel="noopener noreferrer">My resume</texts.button>
         </containers.about>
       </BackgroundImage>
         )}

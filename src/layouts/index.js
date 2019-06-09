@@ -64,9 +64,9 @@ const Layout = ({ children, location }) => (
         </Transition>
         <containers.footer>
           <containers.logo>
-            <a href="https://dribbble.com/" target="_blank"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
-            <a href="https://linkedin.com/" target="_blank"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
-            <a href="#" target="_blank"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
+            <a href="https://dribbble.com/sachatourtoulou" target="_blank" rel="noopener noreferrer"><Img fixed={data.dribbble.childImageSharp.fixed} alt="Logo dribbble" /></a> 
+            <a href="https://www.linkedin.com/in/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
+            <a href="#" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
           </containers.logo>
           <texts.footer bold>
             © {new Date().getFullYear()}, Sacha Tourtoulou. All rights reserved.
@@ -75,7 +75,7 @@ const Layout = ({ children, location }) => (
             sachatourtoulou.fr
           </texts.footer>
           <texts.credits>
-            Built by <a href="https://www.romain-maillot.netlify.com">Romain Maillot</a>
+            Built by <a href="https://www.romain-maillot.netlify.com" target="_blank">Romain Maillot</a>
           </texts.credits>
         </containers.footer>
       </>

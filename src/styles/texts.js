@@ -60,6 +60,7 @@ const description = styled.p`
 `
 
 const button = styled(Link)`
+    cursor: pointer;
     color: black;
     border-radius: 2px;
     padding: 10px 30px;
@@ -69,6 +70,9 @@ const button = styled(Link)`
     font-weight: 700;
     font-size: ${sizes.button};
 `
+
+const buttonProject = button.withComponent('div')
+
 const submit = styled.button`
     color: black;
     width: 150px;
@@ -167,5 +171,6 @@ export {
     info,
     formTitle,
     submit,
-    headerLink
+    headerLink,
+    buttonProject
 }
