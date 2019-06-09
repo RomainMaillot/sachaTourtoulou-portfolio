@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, withPrefix } from "gatsby"
 
 import SEO from "../components/seo"
 
@@ -49,7 +49,7 @@ const About = () => (
             <a href="https://www.linkedin.com/in/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.linkedin.childImageSharp.fixed} alt="Logo linkedin" /></a>
             <a href="https://www.flickr.com/photos/sachatourtoulou/" target="_blank" rel="noopener noreferrer"><Img fixed={data.more.childImageSharp.fixed} alt="" /></a>
           </containers.logos>
-          <texts.resume href="documents/resume.pdf" target="_blank" rel="noopener noreferrer">My resume</texts.resume>
+          <texts.resume href={withPrefix('/resume.pdf')} target="_blank" rel="noopener noreferrer">My resume</texts.resume>
         </containers.about>
       </BackgroundImage>
         )}
