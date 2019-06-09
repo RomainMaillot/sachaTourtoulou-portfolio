@@ -26,7 +26,7 @@ const Home = () => (
                                 fadeIn='soft'
                 >
           <containers.main>
-            <SEO title="Home" description="This is my description." />
+            <SEO title="Home" />
             <texts.textBig>Hey! I’m <span>Sacha</span>, a digital designer from Paris, focused on <span>UI/UX Design</span>, <span>Illustration</span> & <span>Motion Design</span>. Currently student at HETIC. </texts.textBig>
             <texts.button to="/work">See my work</texts.button>
           </containers.main>

@@ -184,6 +184,9 @@ const content = styled.main`
         width: 100%;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media (max-width: ${breakpoints.small}) {
+            flex-direction: column;
+        }
     }
     .col {
         width: 100%;
@@ -208,6 +211,9 @@ const content = styled.main`
         margin-top: 20px;
         text-align: right;
         margin-bottom: 10vh;
+        @media (max-width: ${breakpoints.small}) {
+            width: 100%;
+        }
         p {
             margin-top: 10px;
             font-size: ${sizes.description};
