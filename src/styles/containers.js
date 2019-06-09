@@ -176,10 +176,6 @@ const content = styled.main`
                 text-align: left;
             }
         }
-        .img
-        {
-            width: 100%;
-        }
         @media (max-width: ${breakpoints.medium}) {
             width: 100%;
         }
@@ -193,6 +189,13 @@ const content = styled.main`
             margin-top: 10px;
             font-size: ${sizes.description};
             line-height: 30px;
+        }
+        .img
+        {
+            width: 100%;
+            img {
+                width: 100%;
+            }
         }
     }
     .next {
@@ -223,6 +226,9 @@ const project = styled.div`
     .img {
         width: 100%;
         position: relative;
+        img {
+            width: 100%;
+        }
     }
     .img-after {
         width: 80%;

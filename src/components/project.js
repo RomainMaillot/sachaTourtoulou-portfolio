@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React, { Component } from "react"
 import { texts, containers } from '../styles';
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, withPrefix } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import BackgroundImage from 'gatsby-background-image'
@@ -55,6 +55,15 @@ class Project extends Component {
                                 year
                                 role
                                 context
+                                imageOverview
+                            }
+                        }
+                    }
+                    allProjectsImagesJson {
+                        edges {
+                            node {
+                                url
+                                description
                             }
                         }
                     }
@@ -97,7 +106,7 @@ class Project extends Component {
                             <SEO title="Projects" description="This is my description for my project page." />
                             <texts.title>My work</texts.title>
                             <containers.project className="project">
-                                <div className='img'><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>
+                                <div className='img'><img src={withPrefix(data.allProjectsJson.edges[this.state.project].node.imageOverview)} /></div>
                                 <containers.row>
                                     <containers.col>
                                         <texts.projectTitle>{data.allProjectsJson.edges[this.state.project].node.title} • {data.allProjectsJson.edges[this.state.project].node.year}</texts.projectTitle>
@@ -125,18 +134,16 @@ class Project extends Component {
                                     <texts.info>Context</texts.info>
                                     <texts.text className="paragraphe">{data.allProjectsJson.edges[this.state.project].node.context}</texts.text>
                                 </containers.row>
-                                </containers.col>
-                                <containers.col className="col">
-                                <div className='img'><Img fluid={data.project.childImageSharp.fluid} /></div>
-                                <texts.text>Part of the model of the home page</texts.text>
-                                </containers.col>
-                                <containers.col className="col">
-                                <div className='img'><Img fluid={data.project2.childImageSharp.fluid} /></div>
-                                <texts.text>Part of the model of the flavours page</texts.text>
                             </containers.col>
+                            {data.allProjectsImagesJson.edges.map((image, key) =>
+                                <containers.col test={console.log(image.node.url)} key={key.toString()} className="col">
+                                    <div className='img'><img src={image.node.url} /></div>
+                                    <texts.text>{image.node.description}</texts.text>
+                                </containers.col>
+                            )}
                             <containers.col className="next">
-                                <texts.projectTitle>Web application</texts.projectTitle>
-                                <texts.theme className="paragraphe">UX / UI Design & Branding</texts.theme>
+                                <texts.projectTitle>{(this.state.project + 1) === data.allProjectsJson.edges.length ? data.allProjectsJson.edges[0].node.title : data.allProjectsJson.edges[this.state.project + 1].node.title}</texts.projectTitle>
+                                <texts.theme className="paragraphe">{(this.state.project + 1) === data.allProjectsJson.edges.length ? data.allProjectsJson.edges[0].node.theme : data.allProjectsJson.edges[this.state.project + 1].node.theme}</texts.theme>
                                 <texts.buttonProject onClick={this.handleClick} rel="noopener noreferrer">Next project</texts.buttonProject>
                             </containers.col>
                         </containers.content>

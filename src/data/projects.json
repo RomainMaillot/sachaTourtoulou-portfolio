@@ -4,13 +4,15 @@
         "theme": "UX / UI Design",
         "year": "2019",
         "role": "UX / UI designer",
-        "context": "This is an educational project carried out as part of my studies at HETIC. The subject was to create a digital project related to the Human in society. With my team (composed of 6 people), we created an application that generates accessible journeys for people with disabilities. The challenge was to set up these people in order to develop an application that could be used on a daily basis."
+        "context": "This is an educational project carried out as part of my studies at HETIC. The subject was to create a digital project related to the Human in society. With my team (composed of 6 people), we created an application that generates accessible journeys for people with disabilities. The challenge was to set up these people in order to develop an application that could be used on a daily basis.",
+        "imageOverview": "/projet1.jpg"
     },
     {
-        "title": "Web app • 2018",
+        "title": "Web app",
         "theme": "UX / UI Design & Branding",
         "year": "2018",
         "role": "UX / UI designer",
-        "context": "This is an educational project carried out as part of my studies at HETIC. The subject was to create a digital project related to the Human in society. With my team (composed of 6 people), we created an application that generates accessible journeys for people with disabilities. The challenge was to set up these people in order to develop an application that could be used on a daily basis."
+        "context": "This is an educational project carried out as part of my studies at HETIC. The subject was to create a digital project related to the Human in society. With my team (composed of 6 people), we created an application that generates accessible journeys for people with disabilities. The challenge was to set up these people in order to develop an application that could be used on a daily basis.",
+        "imageOverview": "/projet1.jpg" 
     }
 ]
